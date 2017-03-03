@@ -1,16 +1,43 @@
 $(document).ready(function() {
   var $player1 = $('#monster1');
   var $player2 = $('#monster2');
+  var gameIsOn = false;
 
-  $('body').keydown(function(e){
-    if ( e.which == 39 ) {
-      e.preventDefault();
-      console.log('Player 2 move');
-    } else if ( e.which == 18 ) {
-      e.preventDefault();
-      console.log('Player 1 move');
-    } //closes else statement
-  }); // closes keydown function
+  $('.start').click(function(){
+    if (gameIsOn === true) {
+      alert('Game is on, now turning off game...');
+      gameIsOn = false;
+    } else {
+      alert('Game is off, now turning on game...');
+      gameIsOn = true;
+    }
+    gameState();
+    return gameIsOn;
+  }); // closes restart function
+
+
+
+function gameState () {
+  if (gameIsOn === true) {
+    console.log('game is on');
+  } else {
+    console.log('game is off');
+  } //closes if statement
+  // $('body').keydown(function(e){
+  //   if ( e.which == 39 ) {
+  //     e.preventDefault();
+  //     console.log('Player 2 move');
+  //   } else if ( e.which == 18 ) {
+  //     e.preventDefault();
+  //     console.log('Player 1 move');
+  //   } //closes else statement
+  // }); // closes keydown function
+} // closes gameState function
+
+
+
+      // countDown();
+
   // $('body').keydown(function(e){
   //   if ( e.which == 39 ) {
   //     e.preventDefault();
@@ -21,10 +48,7 @@ $(document).ready(function() {
   //   }
   // });
 
-$('.restart').click(function(){
-  //reset player position
-    // countDown();
-}); // closes restart function
+
 
 
 // } else if ( e.which == 32 ) {
