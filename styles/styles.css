@@ -1,0 +1,24 @@
+body {
+  background-color: rgb(110, 239, 88);
+}
+
+.row {
+  height: 200px;
+  line-height: 200px;
+}
+
+.gameboard {
+  background-color: black;
+  color: white;
+  width: 1400px;
+  margin-left: -65px;
+}
+
+.player {
+  height: 150px;
+  width: 135px;
+}
+
+button {
+  margin-top: 30px;
+}

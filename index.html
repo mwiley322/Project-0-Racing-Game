@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- set viewport to device width to help make site responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Racing Game</title>
+
+
+
+
+  <!-- bootstrap css -->
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <!-- custom styles -->
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>
+
+  <!-- custom script -->
+  <script type="text/javascript" src="scripts/app.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="col-xs-12">
+        <h1 class="text-center">Racing Game</h1>
+      </div> <!-- closes col-md-6 col-md-offset-3 div -->
+    </div> <!-- closes row div -->
+    <div class="row col-xs-12">
+      <p> Score, buttons</p>
+    </div>
+    <div class="gameboard">
+      <div class="row col-xs-12 gameboard">
+        <img src="Pictures/Monster1.png" id="monster1" class="player">
+      </div>
+      <div class="row col-xs-12 gameboard">
+        <img src="Pictures/Monster2.png" id="monster2" class="player">
+      </div>
+    </div>
+    <div class="row col-xs-12">
+      <button type="button" class="btn center-block"><span>Restart Game</span></button>
+    </div>
+  </div> <!-- closes container div -->
+</body>
+</html>
