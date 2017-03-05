@@ -6,10 +6,11 @@ $(document).ready(function() {
   var position2 = 0;
 
 //USE ENTER TO BEGIN GAME
-  $('body').keydown(function start(e){
+  $('*').keydown(function start(e){
     if ( e.which === 32 && !gameIsOn) { //if enter is pressed and game is off
       e.preventDefault();
       gameIsOn = !gameIsOn; //game is turned on
+      // countDown();
       movePlayers(); //and we can use the player keys to move the element
     }  //closes if statement
   }); // closes start keydown function
@@ -18,26 +19,38 @@ $(document).ready(function() {
     $('body').keyup(function(e){
       e.preventDefault();
       if ( e.which === 39 && gameIsOn ) {
-        position1+=10;
-        $player2.animate({left: '+=10px'}, 0);
+        position1+=15;
+        $player2.animate({left: '+=15px'}, 0);
       } //closes if statement
       if ( e.which === 65 && gameIsOn) {
-        position2+=10;
-        $player1.animate({left: '+=10px'}, 0);
+        position2+=15;
+        $player1.animate({left: '+=15px'}, 0);
       } //closes if statement
       evaluateWin();
     }); // closes keydown function
   } // closes movePlayers function
 
 function evaluateWin() {
-  if (position2 === 100) {
+  if (position2 === 1140) {
     alert('Sully wins!');
     $('button').removeClass('hidden');
-  } else if (position1 === 100){
+  } else if (position1 === 1140){
     alert('Mike wins!');
     $('button').removeClass('hidden');
   } //closes if statement
 }
+
+// function countDown() {
+//   // for (var i = 3; i >= 0; i-- ){
+//   var counter = 3;
+//     if (i === 0) {
+//       $('#countdown').setTimeout('Go!');
+//     } else {
+//       $('#countdown').append(i);
+//       counter--;
+//     } // closes else statement
+//   // } // closes for loop
+// } // closes countDown function
 
 //RESTART GAME WITH RESTART BUTTON
   $('.restart').click(function(){
@@ -47,14 +60,13 @@ function evaluateWin() {
     // countDown();
     gameIsOn = !gameIsOn;
     movePlayers();
+    $('button').addClass('hidden');
+    $player1.animate({left: '0'});
+    $player2.animate({left: '0'});
+    position1 = 0;
+    position2 = 0;
     return gameIsOn;
   }); // closes start function
 
-
-
-// Game constructor used every time new game entered, otherwise saved for score.
-// Game start with method that uses key 32 only
-// Player constructor used once for each player at page initializing with button click to start
-// moves are specific to player.. player 1 = 18 to move, player 2= 39 to move
 
 }); //closes ready function

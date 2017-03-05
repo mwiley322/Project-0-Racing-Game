@@ -1,16 +1,29 @@
-/*@font-face {
-    font-family: 'eraserregular';
-    src: url('EraserRegular-webfont.eot');
-    src: url('EraserRegular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('EraserRegular-webfont.ttf') format('truetype'),
-         url('EraserRegular-webfont.svg#eraserregular') format('svg');
+@font-face {
+    font-family: 'monster_agregular';
+    src: url('monster_ag-webfont.woff2') format('woff2'),
+         url('monster_ag-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}*/
+}
 
 body {
+  background-image: url('Factory.jpeg');
   background-color: rgb(110, 239, 88);
   color: black;
+}
+
+h1 {
+  font-family: 'monster_agregular', Helvetica, serif;
+  font-size: 7vw;
+}
+
+h2 {
+  font-size: 43vw;
+  color: white;
+  z-index: 9999;
+  left: 38vw;
+  position: absolute;
+  margin-top: -3vw;
 }
 
 .top {
@@ -19,10 +32,10 @@ body {
 }
 
 .gameboard {
-  background-color: black;
+  background-color: transparent;
   color: white;
   width: 1300px;
-  margin-left: -80px;
+  margin-left: -7vw;
   height: 200px;
   line-height: 200px;
 }
@@ -32,12 +45,14 @@ body {
 }
 
 .player {
-  height: 150px;
-  width: 135px;
+  height: 14vw;
+  width: 12vw;
+  -webkit-filter: drop-shadow(10px 7px 5px #111);
+  filter: drop-shadow(10px 7px 5px #111;
 }
 
 button {
   margin-top: 30px;
-  background-color: rgb(4, 149, 140);
+  background-color: rgb(4, 149, 140) !important;
   color: white;
 }

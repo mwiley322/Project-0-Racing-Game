@@ -2,51 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <!-- set viewport to device width to help make site responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Racing Game</title>
-
-
-
-
+  <title>Monster Race</title>
   <!-- bootstrap css -->
   <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <!-- custom styles -->
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
-
+  <!-- Animate CSS styles -->
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <!-- jquery -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>
-
   <!-- custom script -->
   <script type="text/javascript" src="scripts/app.js"></script>
-
 </head>
+
 <body>
   <div class="container">
+    <h2></h2>
     <div class="header">
       <div class="col-xs-12">
-        <h1 class="text-center">Monster Race</h1>
+        <h1 class="text-center">MonSTEr RaCE</h1>
       </div> <!-- closes col-md-6 col-md-offset-3 div -->
     </div> <!-- closes row div -->
     <div class="row col-xs-12 top">
       <h3> PRESS SPACE BAR TO BEGIN!</h3>
+      <p id="countdown"></p>
     </div>
     <div>
       <div class="row col-xs-12 gameboard">
         <div class="col-xs-1" id="player1">
-          <img src="Pictures/Monster1.png" class="player">
+          <img src="Monster1.png" class="player">
         </div>
       </div>
       <div class="row col-xs-12 gameboard">
         <div class="col-xs-1" id="player2">
-          <img src="Pictures/Monster2.png" class="player">
+          <img src="Monster2.png" class="player">
         </div>
       </div>
     </div>
     <div class="row col-xs-12 bottom">
-      <button type="button" class="btn center-block restart hidden"><span>Restart Game</span></button>
+      <button type="button" class="btn center-block restart hidden animated bounceInLeft"><span>Restart Game</span></button>
     </div>
   </div> <!-- closes container div -->
 </body>
