@@ -1,54 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <!-- set viewport to device width to help make site responsive -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Monster Race</title>
-  <!-- bootstrap css -->
-  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <!-- custom styles -->
-  <link rel="stylesheet" type="text/css" href="styles/styles.css">
-  <!-- Animate CSS styles -->
-  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <!-- jquery -->
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>
-  <!-- custom script -->
-  <script type="text/javascript" src="scripts/app.js"></script>
-</head>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <!-- set viewport to device width to help make site responsive -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Monster Race</title>
+      <!-- bootstrap css -->
+      <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+      <!-- custom styles -->
+      <link rel="stylesheet" type="text/css" href="styles/styles.css">
+      <!-- Animate CSS styles -->
+      <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+      <!-- jquery -->
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>
+      <!-- custom script -->
+      <script type="text/javascript" src="scripts/app.js"></script>
+    </head>
 
-<body>
-  <div class="container">
-    <h2 id="countdown" class="infinite animated fadeIn"></h2>
-    <div class="row">
-      <!-- <div class="col-xs-12"> -->
-        <div class="col-xs-2 infobox">
-          <p>Key 'A' moves Sully</p>
+    <body>
+      <div class="container">
+        <h2 id="countdown"></h2>
+        <div class="row">
+          <div class="col-xs-2 infobox"><p>Key 'A' moves Sully</p></div>
+          <div class="col-xs-8"><h1 class="text-center">MonSTEr RaCE</h1></div>
+          <div class="col-xs-2 infobox">
+            <p>Key <span class="glyphicon glyphicon-arrow-right"></span> moves Mike</p>
+          </div> <!-- closes mike's infobox -->
+        </div> <!-- closes row div -->
+        <div class="row col-xs-12 top">
+          <h3 class="animated pulse infinite"> PRESS SPACE BAR TO BEGIN!</h3>
         </div>
-        <div class="col-xs-8"><h1 class="text-center">MonSTEr RaCE</h1></div>
-        <div class="col-xs-2 infobox">
-          <p>Key <span class="glyphicon glyphicon-arrow-right"></span> moves Mike</p>
+        <div class="row col-xs-12 gameboard">
+            <div class="col-xs-1" id="player1"><img src="Monster1.png" class="player"></div>
         </div>
-
-    </div> <!-- closes row div -->
-    <div class="row col-xs-12 top">
-      <h3 class="animated pulse infinite"> PRESS SPACE BAR TO BEGIN!</h3>
-    </div>
-    <div>
-      <div class="row col-xs-12 gameboard">
-        <div class="col-xs-1" id="player1">
-          <img src="Monster1.png" class="player">
+        <div class="row col-xs-12 gameboard">
+            <div class="col-xs-1" id="player2"><img src="Monster2.png" class="player"></div>
         </div>
-      </div>
-      <div class="row col-xs-12 gameboard">
-        <div class="col-xs-1" id="player2">
-          <img src="Monster2.png" class="player">
+        <div class="row col-xs-12 bottom">
+          <button type="button" class="btn center-block restart hidden animated bounceInLeft"><span>Restart Game</span></button>
         </div>
-      </div>
-    </div>
-    <div class="row col-xs-12 bottom">
-      <button type="button" class="btn center-block restart hidden animated bounceInLeft"><span>Restart Game</span></button>
-    </div>
-  </div> <!-- closes container div -->
-</body>
+      </div> <!-- closes container div -->
+    </body>
 </html>

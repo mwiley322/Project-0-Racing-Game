@@ -6,10 +6,10 @@ function removeCountDown() {
 
 function countDown(sec, e) {
   if (sec === 0) {
-    $(e).html('Go!');
+    $(e).html('Go!').css('left', '25%');
     clearTimeout(timer);
    } else {
-     $(e).html(sec);
+     $(e).addClass('infinite animated fadeIn').html(sec);
      sec--;
   } // closes else statement
   var timer = setTimeout('countDown('+sec+', "'+e+'")', 1000);
@@ -25,7 +25,7 @@ $(document).ready(function() {
   var position2 = 0;
 
 
-//USE SPACEBAR TO BEGIN GAME
+  //USE SPACEBAR TO BEGIN GAME
   $('*').keydown(function start(e){
     if ( e.which === 32 && !gameIsOn) {
       e.preventDefault();
@@ -37,7 +37,7 @@ $(document).ready(function() {
     }  //closes if statement
   }); // closes start keydown function
 
-//MOVE (A) OR RIGHT ARROW TO ANIMATE CHARACTER
+  //MOVE (A) OR RIGHT ARROW TO ANIMATE CHARACTER
   function movePlayers () {
     $('body').keyup(function(e){
       e.preventDefault();
@@ -53,7 +53,7 @@ $(document).ready(function() {
     }); // closes keydown function
   } // closes movePlayers function
 
-//CHECK CHARACTER POSITION AND RESET VALUES
+  //CHECK CHARACTER POSITION AND RESET VALUES
   function evaluateWin() {
     if (position2 === 1140 && position1 !== 1140) {
       $('h3').removeClass('hidden');
@@ -76,8 +76,9 @@ $(document).ready(function() {
     } //closes if statement
   } //closes evaluateWin function
 
-//RESTART GAME ON BUTTON CLICK
+  //RESTART GAME ON BUTTON CLICK
   $('.restart').click(function(){
     window.location.reload();
   }); // closes restart function
+
 }); //closes ready function

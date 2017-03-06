@@ -17,15 +17,17 @@ body {
 h1 {
   font-family: 'monster_agregular', Helvetica, serif;
   font-size: 7vw;
+  color: #0258c9;
 }
 
 h2 {
   font-size: 33vw;
   color: white;
   z-index: 9999;
-  left: 22vw;
   position: absolute;
   margin-top: 7vw;
+  left: 40%;
+  font-family: 'monster_agregular', Helvetica, serif;
 }
 
 h3 {
@@ -38,7 +40,7 @@ h3 {
 }
 
 .infobox {
-  border: 3px solid #0258c9;
+  border: 3px solid black;
   border-radius: 10px;
   background-color: white;
   font-weight: bold;
