@@ -18,12 +18,16 @@ h1 {
 }
 
 h2 {
-  font-size: 43vw;
+  font-size: 33vw;
   color: white;
   z-index: 9999;
-  left: 38vw;
+  left: 22vw;
   position: absolute;
-  margin-top: -3vw;
+  margin-top: 7vw;
+}
+
+h3 {
+  text-align: center;
 }
 
 .top {
@@ -41,7 +45,7 @@ h2 {
 }
 
 .hidden {
-  display: hidden;
+  display: none;
 }
 
 .player {
@@ -49,9 +53,12 @@ h2 {
   width: 12vw;
   -webkit-filter: drop-shadow(10px 7px 5px #111);
   filter: drop-shadow(10px 7px 5px #111;
+  -ms-transform: rotate(7deg); /* IE 9 */
+  -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+  transform: rotate(7deg);
 }
 
-button {
+.btn {
   margin-top: 30px;
   background-color: rgb(4, 149, 140) !important;
   color: white;

@@ -5,12 +5,15 @@ $(document).ready(function() {
   var position1 = 0;
   var position2 = 0;
 
+
+
 //USE ENTER TO BEGIN GAME
   $('*').keydown(function start(e){
     if ( e.which === 32 && !gameIsOn) { //if enter is pressed and game is off
       e.preventDefault();
       gameIsOn = !gameIsOn; //game is turned on
-      // countDown();
+      $('h3').addClass('hidden');
+      countDown(3, '#countdown');
       movePlayers(); //and we can use the player keys to move the element
     }  //closes if statement
   }); // closes start keydown function
@@ -31,42 +34,55 @@ $(document).ready(function() {
   } // closes movePlayers function
 
 function evaluateWin() {
-  if (position2 === 1140) {
+  if (position2 === 1140 && position1 !== 1140) {
     alert('Sully wins!');
     $('button').removeClass('hidden');
-  } else if (position1 === 1140){
-    alert('Mike wins!');
-    $('button').removeClass('hidden');
-  } //closes if statement
-}
-
-// function countDown() {
-//   // for (var i = 3; i >= 0; i-- ){
-//   var counter = 3;
-//     if (i === 0) {
-//       $('#countdown').setTimeout('Go!');
-//     } else {
-//       $('#countdown').append(i);
-//       counter--;
-//     } // closes else statement
-//   // } // closes for loop
-// } // closes countDown function
-
-//RESTART GAME WITH RESTART BUTTON
-  $('.restart').click(function(){
-    // if (gameIsOn === false) {
-    //   gameIsOn = !gameIsOn;
-    // }
-    // countDown();
-    gameIsOn = !gameIsOn;
-    movePlayers();
-    $('button').addClass('hidden');
+    $('h3').removeClass('hidden');
     $player1.animate({left: '0'});
     $player2.animate({left: '0'});
     position1 = 0;
     position2 = 0;
-    return gameIsOn;
-  }); // closes start function
+    gameIsOn = false;
+  } else if (position1 === 1140 && position2 !== 1140){
+    alert('Mike wins!');
+    $('button').removeClass('hidden');
+    $('h3').removeClass('hidden');
+    $player1.animate({left: '0'});
+    $player2.animate({left: '0'});
+    position1 = 0;
+    position2 = 0;
+    gameIsOn = false;
+  } //closes if statement
+}
+
+
+$('.restart').click(function(){
+  // if (gameIsOn === false) {
+  //   gameIsOn = !gameIsOn;
+  // }
+  // countDown();
+  gameIsOn = !gameIsOn;
+  movePlayers();
+  $('button').addClass('hidden');
+  $('h3').addClass('hidden');
+  return gameIsOn;
+}); // closes start function
 
 
 }); //closes ready function
+
+
+// GLOBAL FUNCTIONS BELOW
+
+function countDown(sec, e) {
+  if (sec === 0) {
+    $(e).html('Go!');
+    clearTimeout(timer);
+    gameIsOn = true;
+   } else {
+     $(e).html(sec);
+     sec--;
+  } // closes else statement
+  var timer = setTimeout('countDown('+sec+', "'+e+'")', 1000);
+
+} // closes countdown function
