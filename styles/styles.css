@@ -8,6 +8,7 @@
 
 body {
   background-image: url('Factory.jpeg');
+  background-position: -525px 0;
   background-color: rgb(110, 239, 88);
   color: black;
 }
@@ -39,13 +40,19 @@ h3 {
   background-color: transparent;
   color: white;
   width: 1300px;
-  margin-left: -7vw;
+  margin-left: -10vw;
   height: 200px;
   line-height: 200px;
 }
 
 .hidden {
   display: none;
+}
+
+.transform {
+  -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Chrome, Safari, Opera */
+    transform: rotate(20deg);
 }
 
 .player {
