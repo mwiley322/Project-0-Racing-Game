@@ -11,6 +11,7 @@ body {
   background-position: -525px 0;
   background-color: rgb(110, 239, 88);
   color: black;
+  font-family: Helvetica, serif;
 }
 
 h1 {
@@ -32,8 +33,21 @@ h3 {
 }
 
 .top {
-  height: 150px;
-  line-height: 150px;
+  height: 100px;
+  line-height: 100px;
+}
+
+.infobox {
+  border: 3px solid #0258c9;
+  border-radius: 10px;
+  background-color: white;
+  font-weight: bold;
+  margin-top: 4vw;
+  text-align:center;
+}
+
+.infobox p {
+  margin-top:.7vw;
 }
 
 .gameboard {
@@ -47,6 +61,12 @@ h3 {
 
 .hidden {
   display: none;
+}
+
+button {
+  margin-top: 30px;
+  background-color: rgb(4, 149, 140);
+  color: white;
 }
 
 .transform {
@@ -63,10 +83,4 @@ h3 {
   -ms-transform: rotate(7deg); /* IE 9 */
   -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
   transform: rotate(7deg);
-}
-
-.btn {
-  margin-top: 30px;
-  background-color: rgb(4, 149, 140) !important;
-  color: white;
 }

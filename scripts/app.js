@@ -1,3 +1,22 @@
+// GLOBAL FUNCTIONS BELOW
+
+function removeCountDown() {
+  $('#countdown').addClass('hidden');
+} //closes removeCountDown function
+
+function countDown(sec, e) {
+  if (sec === 0) {
+    $(e).html('Go!');
+    clearTimeout(timer);
+   } else {
+     $(e).html(sec);
+     sec--;
+  } // closes else statement
+  var timer = setTimeout('countDown('+sec+', "'+e+'")', 1000);
+} // closes countdown function
+
+
+// DOM READY BELOW
 $(document).ready(function() {
   var $player1 = $('#player1');
   var $player2 = $('#player2');
@@ -8,15 +27,17 @@ $(document).ready(function() {
 
 //USE SPACEBAR TO BEGIN GAME
   $('*').keydown(function start(e){
-    if ( e.which === 32 && !gameIsOn) { //if enter is pressed and game is off
+    if ( e.which === 32 && !gameIsOn) {
       e.preventDefault();
-      gameIsOn = !gameIsOn; //game is turned on
       $('h3').addClass('hidden');
       countDown(3, '#countdown');
-      movePlayers(); //and we can use the player keys to move the element
+      window.setTimeout(removeCountDown, 4000);
+      gameIsOn = !gameIsOn; //game is turned on
+      window.setTimeout(movePlayers, 4000); //and we can use the player keys to move the element
     }  //closes if statement
   }); // closes start keydown function
 
+//MOVE (A) OR RIGHT ARROW TO ANIMATE CHARACTER
   function movePlayers () {
     $('body').keyup(function(e){
       e.preventDefault();
@@ -32,20 +53,21 @@ $(document).ready(function() {
     }); // closes keydown function
   } // closes movePlayers function
 
+//CHECK CHARACTER POSITION AND RESET VALUES
   function evaluateWin() {
     if (position2 === 1140 && position1 !== 1140) {
-      alert('Sully wins!');
-      $('button').removeClass('hidden');
       $('h3').removeClass('hidden');
+      $('h3').text('Sully wins!');
+      $('button').removeClass('hidden');
       $player1.animate({left: '0'});
       $player2.animate({left: '0'});
       position1 = 0;
       position2 = 0;
       gameIsOn = false;
     } else if (position1 === 1140 && position2 !== 1140){
-      alert('Mike wins!');
-      $('button').removeClass('hidden');
       $('h3').removeClass('hidden');
+      $('h3').text('Mike Wazowski wins!');
+      $('button').removeClass('hidden');
       $player1.animate({left: '0'});
       $player2.animate({left: '0'});
       position1 = 0;
@@ -53,28 +75,9 @@ $(document).ready(function() {
       gameIsOn = false;
     } //closes if statement
   } //closes evaluateWin function
+
+//RESTART GAME ON BUTTON CLICK
+  $('.restart').click(function(){
+    window.location.reload();
+  }); // closes restart function
 }); //closes ready function
-
-
-// GLOBAL FUNCTIONS BELOW
-
-function countDown(sec, e) {
-  if (sec === 0) {
-    $(e).html('Go!');
-    clearTimeout(timer);
-    gameIsOn = true;
-   } else {
-     $(e).addClass('infinite animated fadeIn').html(sec);
-     sec--;
-  } // closes else statement
-  var timer = setTimeout('countDown('+sec+', "'+e+'")', 1000);
-} // closes countdown function
-
-$('.restart').click(function(){
-  countDown(3, '#countdown');
-  gameIsOn = !gameIsOn;
-  movePlayers();
-  $('button').addClass('hidden');
-  $('h3').addClass('hidden');
-  return gameIsOn;
-}); // closes start function
