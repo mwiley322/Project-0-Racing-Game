@@ -1,9 +1,10 @@
 // GLOBAL FUNCTIONS BELOW
-
+//good comments
 function removeCountDown() {
   $('#countdown').addClass('hidden');
 } //closes removeCountDown function
 
+//excellent grasp of jQuery!
 function countDown(sec, e) {
   if (sec === 0) {
     $(e).html('Go!').css('left', '25%');
@@ -26,6 +27,7 @@ $(document).ready(function() {
 
 
   //USE SPACEBAR TO BEGIN GAME
+  //good logic
   $('*').keydown(function start(e){
     if ( e.which === 32 && !gameIsOn) {
       e.preventDefault();
@@ -43,6 +45,7 @@ $(document).ready(function() {
       e.preventDefault();
       if ( e.which === 39 && gameIsOn ) {
         position1+=15;
+        //love the animation
         $player2.animate({left: '+=15px'}, 0).toggleClass('transform');
       } //closes if statement
       if ( e.which === 65 && gameIsOn) {
@@ -54,6 +57,9 @@ $(document).ready(function() {
   } // closes movePlayers function
 
   //CHECK CHARACTER POSITION AND RESET VALUES
+  //very clear good logic. Could you reduce it even more by
+  //moving some of the common stuff outside the conditionals?
+  //not a big deal, just a thought
   function evaluateWin() {
     if (position2 === 1140 && position1 !== 1140) {
       $('h3').removeClass('hidden');
